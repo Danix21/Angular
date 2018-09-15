@@ -1,0 +1,23 @@
+<h2 style = "color: #4CAF50; font: Trebuchet MS;">Alumno:</h2>
+<table id = "tablaCustom">
+  <tr>
+    <th>DNI</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>FechaDeNacimiento</th>
+    <th>Direccion</th>
+    <th>Telefono</th>
+    <th>Email</th>
+    <th>Legajo</th>
+  </tr>
+  <tr>
+    <td>{{alumno.Dni}}</td>
+    <td>{{alumno.Nombre}}</td>
+    <td>{{alumno.Apellido}}</td>
+    <td>{{alumno.FechaDeNacimiento | date:'yyyy-MM-dd'}}</td>
+    <td>{{alumno.Direccion}}</td>
+    <td>{{alumno.Telefono}}</td>
+    <td>{{alumno.Email}}</td>
+    <td>{{alumno.Legajo}}</td>
+  </tr>
+</table>
