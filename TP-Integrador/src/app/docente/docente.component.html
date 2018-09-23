@@ -1,4 +1,4 @@
-<h2 style = "color: #4CAF50; font: Trebuchet MS; text-align: left">Docente:</h2>
+<h2 style = "color: rgb(20, 171, 209); font: Trebuchet MS; text-align: left">Docente:</h2>
 <table id="tablaCustom">
   <tr>
     <th>DNI</th>
@@ -18,7 +18,7 @@
     <td>{{docente.FechaDeNacimiento | date:'yyyy-MM-dd'}}</td>
     <td>{{docente.Direccion}}</td>
     <td>{{docente.Telefono}}</td>
-    <td>{{docente.Email}}</td>
+    <td><a href="mailto:{{docente.Email}}" target="_top">{{docente.Email}}</a></td>
     <td>{{docente.Legajo}}</td>
     <td>{{docente.Cuil}}</td>
   </tr>
