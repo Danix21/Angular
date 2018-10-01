@@ -1,0 +1,11 @@
+:host(.Inactivo) {
+    color: red
+}
+
+:host(.Pendiente) {
+    color: rgb(255, 136, 0)
+}
+
+:host(.Activo) {
+    color: rgb(0, 0, 0)
+}

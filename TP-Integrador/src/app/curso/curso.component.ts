@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ICurso } from 'Interfaces/icurso';
+import { Component, OnInit, Input, HostBinding, Output } from '@angular/core';
+import { Curso } from 'Entidades/curso';
+import { Estados } from 'enums/Estados';
 
 @Component({
   selector: 'app-curso',
@@ -8,10 +9,23 @@ import { ICurso } from 'Interfaces/icurso';
 })
 export class CursoComponent implements OnInit {
 
+  estados = [Estados.Pendiente, Estados.Activo, Estados.Inactivo]
+
+  selectedEstado = Estados.Pendiente;
+  estadoStr = this.selectedEstado;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  @Input() curso : ICurso;
+  @Input() curso: Curso;
+  @Output()
+
+  @HostBinding('attr.class') cssClass = this.estadoStr;
+
+  onChange(event): void {
+    this.curso.Estado = event;
+    this.cssClass = event;
+  }
 }

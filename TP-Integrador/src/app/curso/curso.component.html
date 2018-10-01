@@ -1,11 +1,17 @@
-<h2 style = "color: rgb(20, 171, 209); font: Trebuchet MS;">Curso:</h2>
+<h2 style="color: rgb(20, 171, 209); font: Trebuchet MS;">Curso:</h2>
 <table id="tablaCustom">
   <tr>
     <th>IdCurso</th>
     <th>Asignatura</th>
+    <th>Estado</th>
   </tr>
   <tr>
     <td>{{curso.IdCurso}}</td>
     <td>{{curso.Asignatura}}</td>
+    <td>
+      <select [(ngModel)]="selectedEstado" (ngModelChange)="onChange($event)">
+        <option [value]="estadoStr" *ngFor="let estadoStr of estados">{{estadoStr}}</option>
+      </select>
+    </td>
   </tr>
 </table>

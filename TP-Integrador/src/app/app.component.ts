@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IAlumno } from 'Interfaces/ialumno';
-import { IDocente } from 'Interfaces/idocente';
-import { ICurso } from 'Interfaces/icurso';
+import { Estados } from 'enums/Estados';
+import { Curso } from 'Entidades/curso';
+import { Docente } from 'Entidades/docente';
+import { Alumno } from 'Entidades/alumno';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
   curso = cursoValue;
 }
 
-const alumnoValue : IAlumno = {
+var alumnoValue : Alumno = {
   Dni : 33913241,
   Nombre : "Daniel",
   Apellido : "Sarzi",
@@ -27,7 +28,7 @@ const alumnoValue : IAlumno = {
   Legajo : 11
 }
 
-const docenteValue : IDocente = {
+var docenteValue : Docente = {
   Dni : 33444555,
   Nombre : "Fernando",
   Apellido : "Arias",
@@ -39,7 +40,8 @@ const docenteValue : IDocente = {
   Cuil : "1"
 }
 
-const cursoValue : ICurso = {
+var cursoValue : Curso = {
   IdCurso : 1,
-  Asignatura : "Angular"
+  Asignatura : "Angular",
+  Estado : Estados.Activo
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IAlumno } from 'Interfaces/ialumno';
+import { Alumno } from 'Entidades/alumno';
 
 @Component({
   selector: 'app-alumno',
@@ -13,6 +13,6 @@ export class AlumnoComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Input() alumno : IAlumno;
+  @Input() alumno : Alumno;
 
 }
