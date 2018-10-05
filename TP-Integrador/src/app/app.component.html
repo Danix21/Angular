@@ -8,4 +8,4 @@
 
 <app-alumno [alumno] = "alumno"></app-alumno>
 <app-docente [docente] = "docente"></app-docente>
-<app-curso [curso] = "curso"></app-curso>
+<app-curso [curso] = "curso" (estadoElegido)='cambiarEstado($event)'></app-curso>

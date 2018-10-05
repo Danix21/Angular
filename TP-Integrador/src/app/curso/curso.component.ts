@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding, Output } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, Output, EventEmitter } from '@angular/core';
 import { Curso } from 'Entidades/curso';
 import { Estados } from 'enums/Estados';
 
@@ -11,7 +11,7 @@ export class CursoComponent implements OnInit {
 
   estados = [Estados.Pendiente, Estados.Activo, Estados.Inactivo]
 
-  selectedEstado = Estados.Pendiente;
+  selectedEstado = "";
   estadoStr = this.selectedEstado;
 
   constructor() { }
@@ -20,12 +20,13 @@ export class CursoComponent implements OnInit {
   }
 
   @Input() curso: Curso;
-  @Output()
+  
+  @Output() estadoElegido: EventEmitter<Estados> = new EventEmitter();
 
   @HostBinding('attr.class') cssClass = this.estadoStr;
 
   onChange(event): void {
-    this.curso.Estado = event;
     this.cssClass = event;
+    this.estadoElegido.emit(<Estados> event);
   }
 }

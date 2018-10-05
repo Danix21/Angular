@@ -4,10 +4,12 @@
     <th>IdCurso</th>
     <th>Asignatura</th>
     <th>Estado</th>
+    <th>Asignar estado</th>
   </tr>
   <tr>
     <td>{{curso.IdCurso}}</td>
     <td>{{curso.Asignatura}}</td>
+    <td>{{curso.Estado}}</td>
     <td>
       <select [(ngModel)]="selectedEstado" (ngModelChange)="onChange($event)">
         <option [value]="estadoStr" *ngFor="let estadoStr of estados">{{estadoStr}}</option>
