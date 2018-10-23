@@ -5,14 +5,24 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AlumnoComponent } from './alumno/alumno.component';
 import { DocenteComponent } from './docente/docente.component';
-import { CursoComponent } from './curso/curso.component';
+import { CursoComponent } from './curso-feature/curso/curso.component';
+import { CursosContainerComponent } from './curso-feature/cursos-container/cursos-container.component';
+import { RoutModule } from './rout/rout.module'
+import { CoreModule } from './core/core.module'
+import { ShareModule } from './share/share.module';
+import { HeaderComponent } from './header/header.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     AlumnoComponent,
     DocenteComponent,
-    CursoComponent
+    CursoComponent,
+    CursosContainerComponent,
+    RoutModule,
+    CoreModule,
+    ShareModule,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
