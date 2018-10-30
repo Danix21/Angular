@@ -1,0 +1,18 @@
+<form #f="ngForm" (ngSubmit)="onSubmit( f.value )">
+  <div>
+    <input type="text" placeholder="Nombre" name="nombre" #nombre="ngModel" ngModel required>
+    <span *ngIf="nombre.touched && nombre.invalid">Ingrese el nombre</span>
+  </div>
+  <div>
+    <input type="text" placeholder="Apellido" name="apellido" #apellido="ngModel" ngModel required>
+    <span *ngIf="apellido.touched && apellido.invalid">Ingrese el apellido</span>
+  </div>
+  <div>
+    <input type="email" placeholder="Email" name="email" #email="ngModel" email ngModel required>
+    <span *ngIf="email.touched && email.invalid">Ingrese el email </span>
+    <span *ngIf="email.touched && email.hasError('email')">Formato de email incorrecto</span>
+  </div>
+  <button type="submit" [disabled]="f.invalid">
+    Enviar
+  </button>
+</form>

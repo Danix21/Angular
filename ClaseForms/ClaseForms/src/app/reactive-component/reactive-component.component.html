@@ -1,0 +1,20 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit( myForm.value )">
+  <div>
+    <input type="text" placeholder="Nombre" name="nombre" [formControl]="myForm.controls['nombre']">
+    <span *ngIf="nombre.touched && nombre.invalid">Nombre invalido</span>
+  </div>
+  <div>
+    <input type="text" placeholder="Apellido" name="apellido" [formControl]="myForm.controls['apellido']">
+    <span *ngIf="apellido.touched && apellido.invalid">Apellido invalido</span>
+  </div>
+  <div>
+      Suscribirse? <input type="checkbox" name="nl" [formControl]="myForm.controls['nl']">
+  </div>
+  <div>
+    <input type="email" placeholder="Email" name="email" [formControl]="myForm.controls['email']" disabled='ckNl'>
+    <span *ngIf="email.touched && email.invalid">Email invalido</span>
+  </div>
+  <button type="submit">
+    Enviar
+  </button>
+</form>
