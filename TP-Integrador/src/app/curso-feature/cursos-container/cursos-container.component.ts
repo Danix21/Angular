@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CursoService } from '../curso.service';
+import { ICurso } from 'Interfaces/icurso';
 
 @Component({
   selector: 'app-cursos-container',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosContainerComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private cursoService: CursoService) {
+    
   }
 
+  cursos: ICurso[];
+
+  ngOnInit() {
+    this.cursos = this.cursoService.verCursos();
+  }
 }

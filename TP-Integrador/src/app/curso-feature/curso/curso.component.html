@@ -1,19 +1,25 @@
-<h2 style="color: rgb(20, 171, 209); font: Trebuchet MS;">Curso:</h2>
-<table id="tablaCustom">
-  <tr>
-    <th>IdCurso</th>
-    <th>Asignatura</th>
-    <th>Estado</th>
-    <th>Asignar estado</th>
-  </tr>
-  <tr>
-    <td>{{curso.IdCurso}}</td>
-    <td>{{curso.Asignatura}}</td>
-    <td>{{curso.Estado}}</td>
-    <td>
-      <select [(ngModel)]="selectedEstado" (ngModelChange)="onChange($event)">
-        <option [value]="estadoStr" *ngFor="let estadoStr of estados">{{estadoStr}}</option>
-      </select>
-    </td>
-  </tr>
-</table>
+<p>Curso Id: {{id}}</p>
+
+<ul *ngFor="let curso of cursos | keyvalue">
+  <div *ngIf="curso.value.id == id">
+    <li> Título: {{ curso.value.titulo }}</li>
+    <li> Fecha de inicio: {{ curso.value.fechaInicio | date }}</li>
+    <li> Fecha de fin: {{ curso.value.fechaFin | date }}</li>
+    <li> Asistentes: 
+      <ul>
+        <li *ngFor="let asistente of curso.value.asistentes">
+          {{ asistente }}
+        </li>
+      </ul>
+    </li>
+    <li> Profesor: 
+      <ul>
+        <li> Id: {{ curso.value.profesor.id }}</li>
+        <li> Nombre: {{ curso.value.profesor.nombre }}</li>
+        <li> Apellido: {{ curso.value.profesor.apellido }}</li>
+      </ul>
+    </li>
+    <li> Laboratorio: {{ curso.value.laboratorio }}</li>
+    <li> Estado: {{ curso.value.estado }}</li>
+  </div>
+</ul>

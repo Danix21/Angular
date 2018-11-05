@@ -1,0 +1,13 @@
+
+<ul>
+  <li><a [routerLink]="['/Home']">Home</a></li>
+  <li><a [routerLink]="['/cursos']">Cursos</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Curso</a>
+    <div class="dropdown-content">
+      <a [routerLink]="['/curso',22]">Curso 22</a><br />
+      <a [routerLink]="['/curso',24]">Curso 24</a><br />
+      <a [routerLink]="['/curso',30]">Curso 30</a><br />
+    </div>
+  </li>
+</ul>

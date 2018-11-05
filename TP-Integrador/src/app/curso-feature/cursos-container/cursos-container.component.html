@@ -1,3 +1,24 @@
-<p>
-  cursos-container works!
-</p>
+<p>Lista de cursos</p>
+
+<ul *ngFor="let curso of cursos | keyvalue">
+  <li> Id: {{ curso.value.id }}</li>
+  <li> Título: {{ curso.value.titulo }}</li>
+  <li> Fecha de inicio: {{ curso.value.fechaInicio | date }}</li>
+  <li> Fecha de fin: {{ curso.value.fechaFin | date }}</li>
+  <li> Asistentes: 
+    <ul>
+      <li *ngFor="let asistente of curso.value.asistentes">
+        {{ asistente }}
+      </li>
+    </ul>
+</li>
+  <li> Profesor: 
+    <ul>
+      <li> Id: {{ curso.value.profesor.id }}</li>
+      <li> Nombre: {{ curso.value.profesor.nombre }}</li>
+      <li> Apellido: {{ curso.value.profesor.apellido }}</li>
+    </ul>
+  </li>
+  <li> Laboratorio: {{ curso.value.laboratorio }}</li>
+  <li> Estado: {{ curso.value.estado }}</li>
+</ul>
